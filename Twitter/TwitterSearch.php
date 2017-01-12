@@ -28,7 +28,7 @@ class TwitterSearch
     public function prepareAccessToken()
     {
         try{
-            $url = self::API_URL ."/oauth2/token";
+            $url = "https://api.twitter.com/oauth2/token";
             $value = ['grant_type' => "client_credentials"
             ];
             $header = array('Authorization'=>'Basic ' .base64_encode($this->token.":".$this->tokensecret),
