@@ -70,7 +70,7 @@ class TwitterSearch
             // "slug" => "",
             // "user_id"=> "ahmed627",
             // "screen_name"=>];
-            $post = ["user_id" => "ahmed0627"];
+            $post = ["screen_name" => "ahmed0627"];
             $response = $this->client->get($url, array('query' => $post,'headers' => $header));
             return json_decode($response->getBody()->getContents());
         } catch (RequestException $e) {
