@@ -40,6 +40,8 @@ class TwitterSearch
             $this->accessToken = $result->access_token;
         }
         catch (RequestException $e) {
+            var_dump($e->getResponse()->getStatusCode());
+            die("dies in catch");
             $response = $this->statusCodeHandling($e);
             return $response;
         }
@@ -86,6 +88,6 @@ class TwitterSearch
             $response = json_decode($e->getResponse()->getBody(true)->getContents());
             return $response;
         }
-        die("error");
+        
     }
 }
