@@ -15,7 +15,7 @@ class Search extends \Twitter\Base
     {
         try{
             $url = "/search/tweets.json";
-            $response = $this->callTwitter("get",$url,$post);
+            $response = $this->callTwitter("get",$url,$value);
             return $response;
         } catch (RequestException $e) {
             $response = $this->StatusCodeHandling($e);
