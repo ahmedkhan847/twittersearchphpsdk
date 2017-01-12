@@ -60,6 +60,20 @@ class TwitterSearch
         }
     }
 
+    public function getSpecifiedList($value)
+    {
+        try{
+            $this->prepareAccessToken();
+            $url = self::API_URL . "/lists/members.json";
+            $header = array('Authorization'=>'Bearer ' . $this->accesstoken);
+            $post = ["list_id" => $value];
+            $response = $this->client->get($url, array('query' => $post,'headers' => $header));
+            return json_decode($response->getBody()->getContents());
+        } catch (RequestException $e) {
+            $response = $this->StatusCodeHandling($e);
+            return $response;
+        }
+    }
     public function getList($value)
     {
         try{
