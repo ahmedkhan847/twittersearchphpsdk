@@ -15,6 +15,7 @@ class TwitterSearch
     protected $client;
     protected $token = null;
     protected $tokensecret = null;
+    protected $accesstoken = null;
     public function __construct()
     {
         $this->client = new \GuzzleHttp\Client();
@@ -35,8 +36,9 @@ class TwitterSearch
             "Content-Type"=>"application/x-www-form-urlencoded;charset=UTF-8");
             $response = $this->client->post($url, ['query' => $value,'headers' => $header]);
             $result = json_decode($response->getBody()->getContents());
-            return $result;
-            $this->accessToken = $result->access_token;
+            
+            $this->accesstoken = $result->access_token;
+            return $this->accesstoken;
         }
         catch (RequestException $e) {
             $response = $this->statusCodeHandling($e);
