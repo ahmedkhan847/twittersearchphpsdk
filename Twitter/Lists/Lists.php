@@ -11,7 +11,6 @@ class Lists extends \Twitter\Base
     {
         try{           
             $url = "/lists/members.json";            
-            $post = ["list_id" => $value];
             $response = $this->callTwitter("get",$url,$post);
             return $response;
         } catch (RequestException $e) {
@@ -24,7 +23,6 @@ class Lists extends \Twitter\Base
         try{
             
             $url = "/lists/ownerships.json";
-            $post = ["user_id" => $value];
             $response = $this->callTwitter("post",$url,$post);
             return $response;
         } catch (RequestException $e) {
