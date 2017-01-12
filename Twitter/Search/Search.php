@@ -3,11 +3,6 @@ namespace Twitter\Search;
 /**
  * 
  */
-
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7\Request;
-
 class Search extends \Twitter\Base
 {
 
