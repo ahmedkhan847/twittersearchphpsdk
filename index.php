@@ -7,5 +7,5 @@ use Twitter\TwitterSearch;
 $search = new TwitterSearch();
 $search->setTokken("afmowdkHQTZVZWMxx0dh5Bz4r","fuJ4HNNTkI27qZEFdv3g4MEMXdVoZHUIVXCwmDbqXBRWMrEQAU");
 echo "<pre>";
-print_r($search->prepareAccessToken());
+print_r($search->search("ahmed khan"));
 echo "</pre>";

@@ -26,7 +26,7 @@ class TwitterSearch
         $this->token = $token;
         $this->tokensecret = $secret;
     }
-    public function prepareAccessToken()
+    protected function prepareAccessToken()
     {
         try{
             $url = "https://api.twitter.com/oauth2/token";
@@ -49,10 +49,11 @@ class TwitterSearch
     public function search($value)
     {
         try{
+            $this->prepareAccessToken();
             $url = self::API_URL . "/search/tweets.json";
-            $header = array('Authorization'=>'Bearer ' . $this->accessToken);
+            $header = array('Authorization'=>'Bearer ' . $this->accesstoken);
             $post = ["q" => $value];
-            $response = $this->client->get($url, array('query' => $post,));
+            $response = $this->client->get($url, array('query' => $post,'headers' => $header));
             return json_decode($response->getBody()->getContents());
         } catch (RequestException $e) {
             $response = $this->StatusCodeHandling($e);
