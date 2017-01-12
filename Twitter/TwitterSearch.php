@@ -40,8 +40,6 @@ class TwitterSearch
             $this->accessToken = $result->access_token;
         }
         catch (RequestException $e) {
-            var_dump($e->getResponse()->getStatusCode());
-            die("dies in catch");
             $response = $this->statusCodeHandling($e);
             return $response;
         }
@@ -63,31 +61,10 @@ class TwitterSearch
 
     protected function statusCodeHandling($e)
     {
-        if ($e->getResponse()->getStatusCode() == '400') {
-            $response = json_decode($e->getResponse()->getBody(true)->getContents());
-            return $response;
-        }
-        elseif ($e->getResponse()->getStatusCode() == '422') {
-            $response = json_decode($e->getResponse()->getBody(true)->getContents());
-            return $response;
-        }
-        elseif ($e->getResponse()->getStatusCode() == '500') {
-            $response = json_decode($e->getResponse()->getBody(true)->getContents());
-            return $response;
-        }
-        elseif ($e->getResponse()->getStatusCode() == '401') {
-            $response = json_decode($e->getResponse()->getBody(true)->getContents());
-            return $response;
-        }
-        elseif ($e->getResponse()->getStatusCode() == '403'){
-            $response = json_decode($e->getResponse()->getBody(true)->getContents());
-            return $response;
-        }
-        else{
-            
-            $response = json_decode($e->getResponse()->getBody(true)->getContents());
-            return $response;
-        }
+        $response = array("statuscode" => $e->getResponse()->getStatusCode(),
+                        "error" => json_decode($e->getResponse()->getBody(true)->getContents()));
+        return $response;
+        
         
     }
 }
