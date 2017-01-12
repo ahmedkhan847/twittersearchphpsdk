@@ -60,7 +60,7 @@ class TwitterSearch
         }
     }
 
-    public function getList()
+    public function getList($value)
     {
         try{
             $this->prepareAccessToken();
@@ -70,7 +70,7 @@ class TwitterSearch
             // "slug" => "",
             // "user_id"=> "ahmed627",
             // "screen_name"=>];
-            $post = ["user_id" => "ahmed0627"];
+            $post = ["user_id" => $value];
             $response = $this->client->get($url, array('query' => $post,'headers' => $header));
             return json_decode($response->getBody()->getContents());
         } catch (RequestException $e) {
