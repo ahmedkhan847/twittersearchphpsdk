@@ -38,7 +38,6 @@ class TwitterSearch
             $result = json_decode($response->getBody()->getContents());
             
             $this->accesstoken = $result->access_token;
-            return $this->accesstoken;
         }
         catch (RequestException $e) {
             $response = $this->statusCodeHandling($e);
