@@ -35,6 +35,7 @@ class TwitterSearch
             "Content-Type"=>"application/x-www-form-urlencoded;charset=UTF-8");
             $response = $this->client->post($url, ['query' => $value,'headers' => $header]);
             $result = json_decode($response->getBody()->getContents());
+            die("here");
             return $result;
             $this->accessToken = $result->access_token;
         }
@@ -81,8 +82,10 @@ class TwitterSearch
             return $response;
         }
         else{
+            
             $response = json_decode($e->getResponse()->getBody(true)->getContents());
             return $response;
         }
+        die("error");
     }
 }
