@@ -18,7 +18,7 @@ class Base
         $this->client = new \GuzzleHttp\Client();
     }
     
-    public function setTokken($token,$secret)
+    public function setToken($token,$secret)
     {
         $this->token = $token;
         $this->tokensecret = $secret;
