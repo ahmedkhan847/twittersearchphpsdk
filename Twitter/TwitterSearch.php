@@ -64,13 +64,13 @@ class TwitterSearch
     {
         try{
             $this->prepareAccessToken();
-            $url = self::API_URL . "/lists/list.json";
+            $url = self::API_URL . "/lists/ownerships.json";
             $header = array('Authorization'=>'Bearer ' . $this->accesstoken);
             // $post = ["list_id" => $value,
             // "slug" => "",
             // "user_id"=> "ahmed627",
             // "screen_name"=>];
-            $post = ["screen_name" => "ahmed0627"];
+            $post = ["user_id" => "ahmed0627"];
             $response = $this->client->get($url, array('query' => $post,'headers' => $header));
             return json_decode($response->getBody()->getContents());
         } catch (RequestException $e) {
