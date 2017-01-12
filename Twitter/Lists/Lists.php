@@ -12,7 +12,7 @@ class Lists extends \Twitter\Base
         try{           
             $url = "/lists/members.json";            
             $post = ["list_id" => $value];
-            $response = $this->callTwitter("post",$url,$post);
+            $response = $this->callTwitter("get",$url,$post);
             return $response;
         } catch (RequestException $e) {
             $response = $this->StatusCodeHandling($e);
