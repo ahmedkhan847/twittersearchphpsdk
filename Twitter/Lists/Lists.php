@@ -13,8 +13,8 @@ class Lists extends \Twitter\Base
             $url = "/lists/list.json";
             $response = $this->callTwitter("value",$url,$value);
             return $response;
-        } catch (RequestException $e) {
-            $response = $this->StatusCodeHandling($e);
+        } catch (Exception $e) {
+            $response = array("error" => $e->getMessage());
             return $response;
         }
     }
@@ -25,8 +25,8 @@ class Lists extends \Twitter\Base
             $url = "/lists/members.json";            
             $response = $this->callTwitter("get",$url,$value);
             return $response;
-        } catch (RequestException $e) {
-            $response = $this->StatusCodeHandling($e);
+        } catch (Exception $e) {
+            $response = array("error" => $e->getMessage());
             return $response;
         }
     }
@@ -37,8 +37,8 @@ class Lists extends \Twitter\Base
             $url = "/lists/ownerships.json";
             $response = $this->callTwitter("value",$url,$value);
             return $response;
-        } catch (RequestException $e) {
-            $response = $this->StatusCodeHandling($e);
+        } catch (Exception $e) {
+            $response = array("error" => $e->getMessage());
             return $response;
         }
     }   
