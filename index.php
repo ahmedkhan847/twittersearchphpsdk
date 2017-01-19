@@ -10,6 +10,6 @@ $value = ["list_id" => "821989883380199429",
 "count" => "100"];
 $lists = $list->getListMembers($value);
 echo "<pre>";
-print_r($search->search($lists));
+print_r($lists);
 echo "</pre>";
 ?>
