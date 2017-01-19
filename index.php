@@ -2,12 +2,14 @@
 
 include "vendor/autoload.php";
 
-use Twitter\Search\Search;
+use Twitter\Lists\Lists;
 
-$search = new Search();
-$search->setToken("H9Sq6D2bywCSnaJkDbYgNmIeC","	PQ3MSBdAjLEQUfRo2Mg0z1BRoZDuREbbWAezahHjM7GlpelhxY");
-$value = ["q" => "twitter"];
+$list = new Lists();
+$list->setToken("sVRnCXPUplLFePmzOqqoir8oR","PzmlGmm6UoJluWupC7js2hx025IwaY8gLD4I8BanQZtwS2g2Ql");
+$value = ["list_id" => "821989883380199429",
+"count" => "100"];
+$lists = $list->getListMembers($value);
 echo "<pre>";
-print_r($search->search($value));
+print_r($search->search($lists));
 echo "</pre>";
 ?>
