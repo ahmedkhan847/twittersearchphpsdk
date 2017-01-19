@@ -19,7 +19,7 @@ class Lists extends \Twitter\Base
         }
     }
 
-    public function getSpecifiedList($value)
+    public function getListMembers($value)
     {
         try{           
             $url = "/lists/members.json";            
