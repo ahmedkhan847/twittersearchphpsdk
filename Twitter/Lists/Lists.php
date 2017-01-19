@@ -11,7 +11,7 @@ class Lists extends \Twitter\Base
         try{
             
             $url = "/lists/list.json";
-            $response = $this->callTwitter("value",$url,$value);
+            $response = $this->callTwitter("get",$url,$value);
             return $response;
         } catch (Exception $e) {
             $response = array("error" => $e->getMessage());
@@ -35,7 +35,7 @@ class Lists extends \Twitter\Base
         try{
             
             $url = "/lists/ownerships.json";
-            $response = $this->callTwitter("value",$url,$value);
+            $response = $this->callTwitter("get",$url,$value);
             return $response;
         } catch (Exception $e) {
             $response = array("error" => $e->getMessage());
