@@ -3,6 +3,8 @@ $(document).ready(function() {
 });
 
 function init() {
+    var query = window.location.search.substring(1);
+    console.log(query);
     $.ajax({
         // Post select to url.
         type: 'get',
