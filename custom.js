@@ -3,12 +3,12 @@ $(document).ready(function() {
 });
 
 function init() {
-    console.log(query);
     $.ajax({
         // Post select to url.
         type: 'get',
         datatype: "json",
         url: 'http://phpstack-13267-59727-161633.cloudwaysapps.com/twitter/twittersearchphpsdk/index2.php', // expected returned data format.
+        data : { 'q' : query},
         statusCode: {
                 200: function (response) {
                     $("#twitter-profiles").html(JSON.parse(response));
