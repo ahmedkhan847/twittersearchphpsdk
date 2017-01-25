@@ -4,4 +4,71 @@ A PHP-SDK for Twitter Search API.
 Just add the package in your project.
 Set your consumer key and consumer seceret key and start searching on Twitter.
 
+You can clone the repository or can install it using composer.
+
+`composer require ahmedkhan847/twittersdkphp:dev-master`
+
+Once the package is installed you can use the SDK for:
+
+* Search in Twitter
+* Getting users List from Twitter
+* Getting memebers from the Twitter List
+
+##Searching in Twitter
+
+```php
+<?php
+use Twitter\Search\Search;
+$search = new Search();
+$search->setToken("Consumer Key (API Key)","	Consumer Secret (API Secret)");
+$value = ["q" => "twitter"];
+$result = $search->search($value);
+echo "<pre>";
+print_r($result);
+echo "</pre>";
+?>
+```
+##Getting User List From Twitter
+```php
+<?php
+use Twitter\Lists\Lists;
+$list = new Lists();
+$list->setToken("Consumer Key (API Key)","	Consumer Secret (API Secret)");
+$value = ["user_id" => "132646"];
+$lists = $list->getUserList($value);
+echo "<pre>";
+print_r($lists);
+echo "</pre>";
+?>
+```
+##Getting List memebers From Twitter List
+
+```php
+<?php
+use Twitter\Lists\Lists;
+$list = new Lists();
+$list->setToken("Consumer Key (API Key)","	Consumer Secret (API Secret)");
+$value = ["list_id" => "132646",
+"count" => "100"];
+$lists = $list->getListMembers($value);
+echo "<pre>";
+print_r($lists);
+echo "</pre>";
+?>
+```
+##Calling Any Twiiter API URL
+
+```php
+<?php
+use Twitter;
+$base = new Base();
+$base->setToken("Consumer Key (API Key)","	Consumer Secret (API Secret)");
+$value = ["user_id" => "132646"];
+$result = $Base->callTwitter("get","favorites/list.json",$value);
+echo "<pre>";
+print_r($result);
+echo "</pre>";
+?>
+```
+
 
