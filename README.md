@@ -1,8 +1,6 @@
-# twittersearchphpsdk
-A PHP-SDK for Twitter Search API.
+# Twitter API PHP-SDK 
 
-Just add the package in your project.
-Set your consumer key and consumer seceret key and start searching on Twitter.
+A PHP-SDK for Twitter Search API and for Twitter Rest API. Just add the library in your project.
 
 You can clone the repository or can install it using composer.
 
@@ -13,6 +11,8 @@ Once the package is installed you can use the SDK for:
 * Search in Twitter
 * Getting users List from Twitter
 * Getting memebers from the Twitter List
+
+Set your consumer key and consumer seceret key and start searching on Twitter.
 
 ##Searching in Twitter
 
