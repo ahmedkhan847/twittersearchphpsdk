@@ -56,7 +56,7 @@ print_r($lists);
 echo "</pre>";
 ?>
 ```
-##Calling Any Twiiter API URL
+##Calling Any Twitter API URL
 
 ```php
 <?php
@@ -70,5 +70,5 @@ print_r($result);
 echo "</pre>";
 ?>
 ```
-
+Feel free to contribute in it.
 
