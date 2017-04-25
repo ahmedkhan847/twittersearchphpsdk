@@ -14,7 +14,7 @@ Once the package is installed you can use the SDK for:
 
 Set your consumer key and consumer seceret key and start searching on Twitter.
 
-##Searching in Twitter
+## Searching in Twitter
 
 ```php
 <?php
@@ -28,7 +28,7 @@ print_r($result);
 echo "</pre>";
 ?>
 ```
-##Getting User List From Twitter
+## Getting User List From Twitter
 ```php
 <?php
 use Twitter\Lists\Lists;
@@ -41,7 +41,7 @@ print_r($lists);
 echo "</pre>";
 ?>
 ```
-##Getting List memebers From Twitter List
+## Getting List memebers From Twitter List
 
 ```php
 <?php
@@ -56,7 +56,7 @@ print_r($lists);
 echo "</pre>";
 ?>
 ```
-##Calling Any Twitter API URL
+## Calling Any Twitter API URL
 
 ```php
 <?php
