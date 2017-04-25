@@ -4,7 +4,7 @@ A PHP-SDK for Twitter Search API and for Twitter Rest API. Just add the library 
 
 You can clone the repository or can install it using composer.
 
-`composer require ahmedkhan847/twittersdkphp:dev-master`
+`composer require ahmedkhan847/twittersdkphp:dev-master:1.*`
 
 Once the package is installed you can use the SDK for:
 
