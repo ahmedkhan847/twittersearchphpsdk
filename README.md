@@ -18,6 +18,8 @@ Set your consumer key and consumer seceret key and start searching on Twitter.
 
 ```php
 <?php
+include "vendor/autoload.php";
+
 use Twitter\Search\Search;
 $search = new Search();
 $search->setToken("Consumer Key (API Key)","	Consumer Secret (API Secret)");
@@ -31,6 +33,8 @@ echo "</pre>";
 ## Getting User List From Twitter
 ```php
 <?php
+include "vendor/autoload.php";
+
 use Twitter\Lists\Lists;
 $list = new Lists();
 $list->setToken("Consumer Key (API Key)","	Consumer Secret (API Secret)");
@@ -45,6 +49,8 @@ echo "</pre>";
 
 ```php
 <?php
+include "vendor/autoload.php";
+
 use Twitter\Lists\Lists;
 $list = new Lists();
 $list->setToken("Consumer Key (API Key)","	Consumer Secret (API Secret)");
@@ -60,6 +66,8 @@ echo "</pre>";
 
 ```php
 <?php
+include "vendor/autoload.php";
+
 use Twitter;
 $base = new Base();
 $base->setToken("Consumer Key (API Key)","	Consumer Secret (API Secret)");
@@ -70,5 +78,5 @@ print_r($result);
 echo "</pre>";
 ?>
 ```
-Feel free to contribute in it.
+Feel free to contribute to the master branch
 
